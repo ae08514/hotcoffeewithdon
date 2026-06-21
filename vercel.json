@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "hotcoffeewithdon",
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "env": {
+    "SQUARE_ACCESS_TOKEN": "@hcwd-square-token",
+    "SQUARE_LOCATION_ID": "@hcwd-square-location",
+    "SQUARE_PLAN_COFFEE": "@hcwd-plan-coffee",
+    "SQUARE_PLAN_WEEKLY": "@hcwd-plan-weekly",
+    "SQUARE_PLAN_BREW": "@hcwd-plan-brew",
+    "SQUARE_PLAN_FULLPOT": "@hcwd-plan-fullpot",
+    "COMPOSIO_API_KEY": "@composio-api-key",
+    "ZOHO_CRM_CONNECTED_ACCOUNT": "@zoho-crm-account",
+    "CRISIS_PDF_URL": "@hcwd-crisis-pdf-url"
+  }
+}
